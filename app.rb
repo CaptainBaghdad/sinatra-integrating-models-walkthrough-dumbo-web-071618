@@ -10,7 +10,7 @@ class App < Sinatra::Base
   post '/' do
    @text_from_user = params[:user_text]
    @num = @text_from_user.split.count
-   puts "This is the Number of Words: #{@num}"
+    "Number of Words: #{@num}"
 
     erb :results
   end
