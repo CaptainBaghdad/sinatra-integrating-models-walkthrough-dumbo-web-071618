@@ -8,9 +8,10 @@ class App < Sinatra::Base
   end
 
   post '/' do
-   @text_from_user = params[:user_text]
-   @num = @text_from_user.split.count
-   return "Number of Words: #{@num}"
+   text_from_user = params[:user_text]
+   @analyzed_text  = TextAnalyzer.new(text_from_user)
+   #@num = @text_from_user.split.count
+   #return "Number of Words: #{@num}"
 
     erb :results
   end
